@@ -15,7 +15,7 @@ namespace CodingChallenge
 
         private static void RunCheckForEight()
         {
-            var checkForEight = new CheckForEight()
+            var checkForEight = new CheckForEight();
             checkForEight.Run();
         }
     }
