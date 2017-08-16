@@ -10,7 +10,13 @@ namespace CodingChallenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test");
+            RunCheckForEight();
+        }
+
+        private static void RunCheckForEight()
+        {
+            var checkForEight = new CheckForEight()
+            checkForEight.Run();
         }
     }
 }
