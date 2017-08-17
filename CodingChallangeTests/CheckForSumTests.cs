@@ -33,7 +33,7 @@ namespace CodingChallengeTests
         [TestCase(new int[4] { 2, 2, 2, 2 }, 24)]
         public void ShouldReturnSum(int[] dataSet, int expectedSum)
         {
-            var actualSum = new CheckForSum().GetSumOfNumbers(dataSet);
+            var actualSum = new SumChecker().GetSumOfAllSums(dataSet);
 
             Assert.AreEqual(expectedSum, actualSum);
         }

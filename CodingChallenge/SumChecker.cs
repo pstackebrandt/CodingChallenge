@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace CodingChallenge
 {
-    public class CheckForSum
+    public class SumChecker
     {
-        public int GetSum(IList<int> dataSet)
+        public int GetTotalSum(IList<int> dataSet)
         {
             int sum;
 
             switch (dataSet.Count)
             {
                 case 2:
-                    sum = GetSumOf2NumbersManually(dataSet);
+                    sum = GetSumOfAllSumsOf2NumbersManually(dataSet);
                     break;
 
                 case 3:
-                    sum = GetSumOf3NumbersManually(dataSet);
+                    sum = GetSumOfAllSumsOf3NumbersManually(dataSet);
                     break;
 
                 default:
@@ -30,12 +30,12 @@ namespace CodingChallenge
             return sum;
         }
 
-        public int GetSumOf2NumbersManually(IList<int> dataSet)
+        public int GetSumOfAllSumsOf2NumbersManually(IList<int> dataSet)
         {
             return dataSet[0] + dataSet[1];
         }
 
-        public int GetSumOf3NumbersManually(IList<int> set)
+        public int GetSumOfAllSumsOf3NumbersManually(IList<int> set)
         {
             var sum01 = set[0] + set[1];
             var sum02 = set[0] + set[2];
@@ -44,12 +44,9 @@ namespace CodingChallenge
             return sum01 + sum02 + sum12;
         }
 
-        public int GetSumOfNumbers(IList<int> set)
+        public int GetSumOfAllSums(IList<int> set)
         {
-            //[1, 2]
-
             var sum = 0;
-
             var currentFirstSummandPos = 0;
 
             while (currentFirstSummandPos < set.Count)
@@ -66,12 +63,9 @@ namespace CodingChallenge
             return sum;
         }
 
-        public bool ContainsExpectedSum(IList<int> set, int expectedSum, out IList<int> positionOfFoundSum, out int countOfChecks)
+        public bool ContainsSum(IList<int> set, int expectedSum, out IList<int> positionOfFoundSum, out int countOfChecks)
         {
-            //[1, 2]
-
             var sum = 0;
-
             var currentFirstSummandPos = 0;
             countOfChecks = 0;
 
