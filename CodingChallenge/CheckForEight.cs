@@ -22,7 +22,7 @@ namespace CodingChallenge
         {
             Console.WriteLine($"{nameof(CheckForEight)}.{nameof(CheckForEight.Run)}()");
 
-            var data = new DataProvider.GetData(first);
+            var data = new DataProvider().GetDataSet(DataProvider.FirstDataSet);
         }
     }
 }

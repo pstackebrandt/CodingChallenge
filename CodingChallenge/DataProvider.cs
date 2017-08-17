@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CodingChallenge
 {
@@ -7,33 +8,34 @@ namespace CodingChallenge
         /// <summary>
         /// Identifies a data set.
         /// </summary>
-        internal const string FirstDataSet = "first";
+        public const string FirstDataSet = "first";
 
         /// <summary>
         /// Identifies a data set.
         /// </summary>
-        internal const string SecondDataSet = "second";
-
+        public const string SecondDataSet = "second";
 
         public DataProvider()
         {
         }
 
-        private IEnumerable<int> GetDataSet(string which)
+        public IEnumerable<int> GetDataSet(string which)
         {
             var data = new List<int>();
 
             switch (which)
             {
-                case nameof(DataProvider.FirstDataSet):
+                case DataProvider.FirstDataSet:
                     data.AddRange(new[] { 1, 2, 3, 9 });
                     break;
 
-                case nameof(DataProvider.SecondDataSet):
+                case DataProvider.SecondDataSet:
                     data.AddRange(new[] { 1, 2, 4, 4 });
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(which), "Unsupported data set");
             }
-            
+
             return data;
         }
     }

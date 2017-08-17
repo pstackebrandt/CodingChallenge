@@ -53,11 +53,18 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NUnitTest1.cs" />
+    <Compile Include="CheckForSumTests.cs" />
+    <Compile Include="DataProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodingChallenge\CodingChallenge.csproj">
+      <Project>{5E9BD314-CF89-4C2C-9868-1AF9CC4CCAE6}</Project>
+      <Name>CodingChallenge</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
