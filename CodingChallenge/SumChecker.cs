@@ -1,14 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodingChallenge
 {
     public class SumChecker
     {
+        public bool ContainsSum(IList<int> set, int expectedSum, out IList<int> positionOfFoundSum, out int countOfChecks)
+        {
+            var sum = 0;
+            var currentFirstSummandPos = 0;
+            countOfChecks = 0;
+
+            while (currentFirstSummandPos < set.Count)
+            {
+                for (var currentSecondSummandPos = currentFirstSummandPos + 1; currentSecondSummandPos < set.Count; currentSecondSummandPos++)
+                {
+                    var currentSum = set[currentFirstSummandPos] + set[currentSecondSummandPos];
+                    countOfChecks++;
+
+                    if (currentSum == expectedSum)
+                    {
+                        positionOfFoundSum = new List<int> { currentFirstSummandPos, currentSecondSummandPos };
+                        return true;
+                    }
+
+                    sum = sum + currentSum;
+                }
+
+                currentFirstSummandPos++;
+            }
+
+            positionOfFoundSum = new List<int>();
+            return false;
+        }
+
         public int GetTotalSum(IList<int> dataSet)
         {
             int sum;
@@ -61,35 +86,6 @@ namespace CodingChallenge
             }
             
             return sum;
-        }
-
-        public bool ContainsSum(IList<int> set, int expectedSum, out IList<int> positionOfFoundSum, out int countOfChecks)
-        {
-            var sum = 0;
-            var currentFirstSummandPos = 0;
-            countOfChecks = 0;
-
-            while (currentFirstSummandPos < set.Count)
-            {
-                for (var currentSecondSummandPos = currentFirstSummandPos + 1; currentSecondSummandPos < set.Count; currentSecondSummandPos++)
-                {
-                    var currentSum = set[currentFirstSummandPos] + set[currentSecondSummandPos];
-                    countOfChecks++;
-
-                    if (currentSum == expectedSum)
-                    {
-                        positionOfFoundSum = new List<int> {currentFirstSummandPos, currentSecondSummandPos};
-                        return true;
-                    }
-
-                    sum = sum + currentSum;
-                }
-
-                currentFirstSummandPos++;
-            }
-
-            positionOfFoundSum = new List<int>();
-            return false;
         }
     }
 }

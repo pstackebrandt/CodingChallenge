@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckForEight.cs" />
+    <Compile Include="ListAndArrayUtillity.cs" />
     <Compile Include="SumChecker.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Program.cs" />

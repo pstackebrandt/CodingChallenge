@@ -1,26 +1,11 @@
-﻿using System.Linq;
-using CodingChallenge;
+﻿using CodingChallenge;
 using NUnit.Framework;
 
-namespace CodingChallengeTests
+namespace CodingChallangeTests
 {
     [TestFixture]
     public class CheckForSumTests
     {
-        //[Test]
-        //[TestCase(DataProvider.FirstDataSet, 8, true)]
-        //[TestCase(DataProvider.SecondDataSet, 8, false)]
-        //public void ShouldFindFirstSum(string dataSetName, int sum, bool expectedHasSum)
-        //{
-        //    var provider = new DataProvider();
-        //    var dataSet = provider.GetDataSet(DataProvider.FirstDataSet).ToList();
-
-        //    var checker = new CheckForSum();
-        //    var actualHasSum = checker.FindFirstSum(dataSet, sum);
-
-        //    Assert.AreEqual(expectedHasSum, actualHasSum);
-        //}
-
         [Test]
 
         [TestCase(new int[2] { 1, 2 }, 3)]
